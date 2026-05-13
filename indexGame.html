@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Target Archery</title>
+    <style>
+        body { 
+            margin: 0; 
+            overflow: hidden;
+            background: black;
+        }
+
+        canvas { 
+            display: block;
+        }
+
+        /*TITLE*/
+        h1 {
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            margin: 0;
+            color: rgb(255, 190, 12);
+            z-index: 5;
+        }
+
+        /*HUD*/
+        #hud {
+            position: absolute; 
+            top: 60px; 
+            left: 20px; 
+            color: rgb(8, 211, 42);
+            font-size: 18px;
+            font-weight: bold;
+            z-index: 5;
+        }
+
+        /*GAME OVER SCREEN*/
+        #gameOverScreen {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: 20;
+        }
+
+        #gameOverScreen h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        #restartBtn {
+            padding: 15px 40px;
+            font-size: 28px;
+            border: none;
+            cursor: pointer;
+        }   
+    
+
+    </style>
+    </head>
+
+    <body>
+        <h1>BOUNCING TARGET ARCHERY</h1>
+
+        <div id = "hud"></div>
+
+        <div id = "gameOverScreen">
+            <h2>
+                You Lost All Your Lives!
+            </h2>
+            
+            <button id = "restartBtn">RESTART</button>
+        </div>
+
+        <audio id = "hitSound" src = "hit.mp3"></audio>
+
+        <audio id = "missSound" src = "miss.mp3"></audio>
+
+        <canvas id = "glCanvas"></canvas>
+
+        <script src = "BouncingTargetArchery.js"></script>
+
+</body>
+</html>
